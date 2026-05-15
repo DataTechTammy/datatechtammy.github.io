@@ -784,9 +784,7 @@ body {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  position: relative;
-  overflow: hidden;
-  border-top: 3px solid transparent;
+  border-top: 3px solid;
   border-image: var(--grad-main) 1;
 }
 
@@ -811,9 +809,10 @@ body {
 }
 
 .edu__gpa {
-  position: absolute;
-  top: 24px; right: 24px;
   text-align: center;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-top: 4px;
 }
 
 .gpa-num {
@@ -876,6 +875,25 @@ body {
 .learning-icon { font-size: 1.2rem; }
 
 /* ---------- CERTIFICATIONS ---------- */
+.certs__section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--c-cyan);
+  margin-bottom: 20px;
+  padding-left: 4px;
+}
+
+.certs__section-label--progress {
+  color: var(--text-muted);
+  margin-top: 40px;
+}
+
+.certs__grid--completed {
+  margin-bottom: 8px;
+}
+
 .certs__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -931,10 +949,11 @@ body {
   flex-shrink: 0;
 }
 
-.cert-card__logo--outskill  { background: linear-gradient(135deg, #f72585, #7209b7); }
-.cert-card__logo--datacamp  { background: linear-gradient(135deg, #03ef62, #05a37c); }
-.cert-card__logo--microsoft { background: linear-gradient(135deg, #0078d4, #00bcf2); }
-.cert-card__logo--ibm       { background: linear-gradient(135deg, #1f70c1, #054ada); }
+.cert-card__logo--outskill    { background: linear-gradient(135deg, #f72585, #7209b7); }
+.cert-card__logo--datacamp    { background: linear-gradient(135deg, #03ef62, #05a37c); }
+.cert-card__logo--microsoft   { background: linear-gradient(135deg, #0078d4, #00bcf2); }
+.cert-card__logo--ibm         { background: linear-gradient(135deg, #1f70c1, #054ada); }
+.cert-card__logo--growthschool{ background: linear-gradient(135deg, #00c853, #1a472a); }
 
 .cert-card__body h3 {
   font-family: var(--font-main);
@@ -1213,6 +1232,6 @@ body {
   .hero__titles { flex-direction: column; gap: 8px; }
   .hero__divider { display: none; }
   .edu__card { flex-direction: column; }
-  .edu__gpa { position: static; margin-top: 8px; }
+  .edu__gpa { align-self: flex-start; }
 }
 
