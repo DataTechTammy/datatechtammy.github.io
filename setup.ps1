@@ -77,7 +77,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__num">6</span>
+          <span class="stat__num">7</span>
           <span class="stat__label">Certifications</span>
         </div>
       </div>
@@ -339,6 +339,19 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
             <h3>Generative AI Mastermind</h3>
             <p class="cert-card__issuer">Outskill</p>
             <p class="cert-card__desc">Comprehensive program covering generative AI principles, tools, workflows, and practical applications across business and technical contexts.</p>
+          </div>
+          <div class="cert-card__footer">
+            <span class="cert-status cert-status--complete">✓ Certificate of Completion</span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--completed">
+          <div class="cert-card__ribbon">Completed</div>
+          <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
+          <div class="cert-card__body">
+            <h3>Gen AI Engineering Mastermind</h3>
+            <p class="cert-card__issuer">Outskill</p>
+            <p class="cert-card__desc">Advanced AI engineering program covering generative AI system design, implementation, and deployment — certified by industry experts from SLK and Silival.</p>
           </div>
           <div class="cert-card__footer">
             <span class="cert-status cert-status--complete">✓ Certificate of Completion</span>
@@ -1936,7 +1949,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
 '@ | Set-Content -Path assets\js\main.js -Encoding UTF8
 
 git add .
-git commit -m "Fix education overlap, add Growth School and Power BI certificates"
+git commit -m "Add Gen AI Engineering Mastermind certificate, 7 certs total"
 git push
 
 Write-Host "Done! Changes pushed." -ForegroundColor Green
