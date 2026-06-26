@@ -72,7 +72,7 @@ function typeEffect() {
 
 setTimeout(typeEffect, 800);
 
-/* ---------- INTERSECTION OBSERVER — REVEAL ---------- */
+/* ---------- INTERSECTION OBSERVER - REVEAL ---------- */
 const revealEls = document.querySelectorAll(
   '.skill-card, .timeline__item, .cert-card, .coming-card, ' +
   '.contact-card, .edu__card, .edu__currently, .highlight, ' +
@@ -171,4 +171,3 @@ if (window.matchMedia('(pointer: fine)').matches) {
     glow.style.top  = e.clientY + 'px';
   });
 }
-
