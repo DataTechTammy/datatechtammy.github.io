@@ -1,14 +1,19 @@
-# ============================================================
-# Tammy S. Miller — Resume Page Setup Script (Updated)
-# Run this in PowerShell inside your repo folder:
-# C:\Users\datac\OneDrive\Documents\GitHub\datatechtammy.github.io
-# ============================================================
+# Tammy S. Miller — Resume Site Setup Script
+# Run with: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\setup.ps1
 
-New-Item -ItemType Directory -Path assets\css -Force | Out-Null
-New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
+$ErrorActionPreference = "Stop"
+$repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-# --- index.html ---
-@'
+Write-Host "Setting up Tammy S. Miller resume site..." -ForegroundColor Cyan
+
+# Create directories
+New-Item -ItemType Directory -Path "$repoRoot\assets\css" -Force | Out-Null
+New-Item -ItemType Directory -Path "$repoRoot\assets\js"  -Force | Out-Null
+
+# ─────────────────────────────────────────────
+# index.html
+# ─────────────────────────────────────────────
+$html = @'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,17 +54,17 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
     <div class="hero__content">
       <div class="hero__badge">
         <span class="pulse-dot"></span>
-        Open to AI & Data Opportunities
+        Open to AI &amp; Data Opportunities
       </div>
       <h1 class="hero__name">Tammy S. Miller</h1>
       <div class="hero__titles">
         <span class="hero__title-static">Data Analytics Professional</span>
-        <span class="hero__divider">✦</span>
+        <span class="hero__divider">&#10022;</span>
         <span class="hero__title-rotating" id="rotating-title">AI Generalist</span>
       </div>
       <p class="hero__tagline">
         Turning raw data into decisions.<br/>
-        Building toward the AI-powered future — one query at a time.
+        Building toward the AI-powered future &mdash; one query at a time.
       </p>
       <div class="hero__actions">
         <a href="#experience" class="btn btn--primary">View My Work</a>
@@ -77,8 +82,8 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__num">7</span>
-          <span class="stat__label">Certifications</span>
+          <span class="stat__num">8</span>
+          <span class="stat__label">Certificates</span>
         </div>
       </div>
     </div>
@@ -91,7 +96,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <!-- ABOUT -->
   <section class="section about" id="about">
     <div class="container">
-      <div class="section__label">01 — About</div>
+      <div class="section__label">01 &mdash; About</div>
       <div class="about__grid">
         <div class="about__text">
           <h2 class="section__heading">Analytics meets <span class="gradient-text">Artificial Intelligence</span></h2>
@@ -107,15 +112,15 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
           </p>
           <div class="about__highlights">
             <div class="highlight">
-              <span class="highlight__icon">⚡</span>
+              <span class="highlight__icon">&#9889;</span>
               <span>Reduced ticket resolution time by 25% through smarter triage</span>
             </div>
             <div class="highlight">
-              <span class="highlight__icon">🎯</span>
-              <span>Enterprise IT systems with Microsoft 365 & endpoint management</span>
+              <span class="highlight__icon">&#127919;</span>
+              <span>Enterprise IT systems with Microsoft 365 &amp; endpoint management</span>
             </div>
             <div class="highlight">
-              <span class="highlight__icon">🤖</span>
+              <span class="highlight__icon">&#129302;</span>
               <span>Actively studying AI, data analytics, and cloud fundamentals</span>
             </div>
           </div>
@@ -132,15 +137,15 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
             </div>
             <div class="profile-card__details">
               <div class="detail-row">
-                <span class="detail-icon">📍</span>
+                <span class="detail-icon">&#128205;</span>
                 <span>Wilmington, OH</span>
               </div>
               <div class="detail-row">
-                <span class="detail-icon">💼</span>
-                <span>ATSG — IT Support Technician</span>
+                <span class="detail-icon">&#128188;</span>
+                <span>ATSG &mdash; IT Support Technician</span>
               </div>
               <div class="detail-row">
-                <span class="detail-icon">📧</span>
+                <span class="detail-icon">&#128231;</span>
                 <span>datacentertech.tmiller@gmail.com</span>
               </div>
             </div>
@@ -157,13 +162,13 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <!-- SKILLS -->
   <section class="section skills" id="skills">
     <div class="container">
-      <div class="section__label">02 — Skills</div>
+      <div class="section__label">02 &mdash; Skills</div>
       <h2 class="section__heading">Core <span class="gradient-text">Capabilities</span></h2>
       <div class="skills__grid">
 
         <div class="skill-card skill-card--data">
-          <div class="skill-card__icon">📊</div>
-          <h3>Data & Analytics</h3>
+          <div class="skill-card__icon">&#128202;</div>
+          <h3>Data &amp; Analytics</h3>
           <div class="skill-tags">
             <span class="tag">Dashboard Design</span>
             <span class="tag">SQL</span>
@@ -175,12 +180,12 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         </div>
 
         <div class="skill-card skill-card--ai">
-          <div class="skill-card__icon">🤖</div>
-          <h3>AI & Emerging Tech</h3>
+          <div class="skill-card__icon">&#129302;</div>
+          <h3>AI &amp; Emerging Tech</h3>
           <div class="skill-tags">
             <span class="tag">Generative AI</span>
             <span class="tag">AI Prompt Engineering</span>
-            <span class="tag">AI Tools & Workflows</span>
+            <span class="tag">AI Tools &amp; Workflows</span>
             <span class="tag">Applied AI Concepts</span>
             <span class="tag">Cloud Fundamentals</span>
             <span class="tag">AI Literacy</span>
@@ -188,8 +193,8 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         </div>
 
         <div class="skill-card skill-card--platform">
-          <div class="skill-card__icon">🖥️</div>
-          <h3>Platforms & IT</h3>
+          <div class="skill-card__icon">&#128421;</div>
+          <h3>Platforms &amp; IT</h3>
           <div class="skill-tags">
             <span class="tag">Microsoft 365</span>
             <span class="tag">Windows 10/11</span>
@@ -201,7 +206,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         </div>
 
         <div class="skill-card skill-card--soft">
-          <div class="skill-card__icon">🧠</div>
+          <div class="skill-card__icon">&#129504;</div>
           <h3>Ways of Working</h3>
           <div class="skill-tags">
             <span class="tag">Root-Cause Analysis</span>
@@ -220,13 +225,13 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <!-- EXPERIENCE -->
   <section class="section experience" id="experience">
     <div class="container">
-      <div class="section__label">03 — Experience</div>
+      <div class="section__label">03 &mdash; Experience</div>
       <h2 class="section__heading">Career <span class="gradient-text">Journey</span></h2>
       <div class="timeline">
 
         <div class="timeline__item timeline__item--active">
           <div class="timeline__dot"></div>
-          <div class="timeline__date">Jan 2025 — Present</div>
+          <div class="timeline__date">Jan 2025 &mdash; Present</div>
           <div class="timeline__card">
             <div class="timeline__card-header">
               <div>
@@ -241,7 +246,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
               Collaborating with senior technicians and infrastructure teams on escalations and user-impacting changes.
             </p>
             <div class="timeline__impact">
-              <span class="impact-icon">🏆</span>
+              <span class="impact-icon">&#127942;</span>
               <strong>Impact:</strong> Reduced average ticket resolution time by 25% through improved triage and documentation.
             </div>
             <div class="timeline__tech">
@@ -255,11 +260,11 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
 
         <div class="timeline__item">
           <div class="timeline__dot"></div>
-          <div class="timeline__date">Nov 2021 — May 2024</div>
+          <div class="timeline__date">Nov 2021 &mdash; May 2024</div>
           <div class="timeline__card">
             <div class="timeline__card-header">
               <div>
-                <h3>Client Service Associate — Participant Services</h3>
+                <h3>Client Service Associate &mdash; Participant Services</h3>
                 <p class="timeline__company">Ascensus</p>
               </div>
             </div>
@@ -284,15 +289,15 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <!-- EDUCATION -->
   <section class="section education" id="education">
     <div class="container">
-      <div class="section__label">04 — Education</div>
+      <div class="section__label">04 &mdash; Education</div>
       <h2 class="section__heading">Academic <span class="gradient-text">Foundation</span></h2>
       <div class="edu__grid">
         <div class="edu__card">
-          <div class="edu__icon">🎓</div>
+          <div class="edu__icon">&#127891;</div>
           <div class="edu__content">
-            <h3>A.A.S., Software Applications & Programming</h3>
+            <h3>A.A.S., Software Applications &amp; Programming</h3>
             <p class="edu__meta">Graduated with GPA <strong>3.73</strong></p>
-            <p>Foundational coursework in software development, programming logic, and applications — building the technical backbone for a career in data and AI.</p>
+            <p>Foundational coursework in software development, programming logic, and applications &mdash; building the technical backbone for a career in data and AI.</p>
           </div>
           <div class="edu__gpa">
             <span class="gpa-num">3.73</span>
@@ -303,20 +308,20 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
           <h3>Currently Learning</h3>
           <div class="learning-grid">
             <div class="learning-item">
-              <span class="learning-icon">📈</span>
+              <span class="learning-icon">&#128200;</span>
               <span>Data Analytics (DataCamp)</span>
             </div>
             <div class="learning-item">
-              <span class="learning-icon">☁️</span>
-              <span>Data & Cloud Fundamentals (Microsoft Learn)</span>
+              <span class="learning-icon">&#9729;</span>
+              <span>Data &amp; Cloud Fundamentals (Microsoft Learn)</span>
             </div>
             <div class="learning-item">
-              <span class="learning-icon">🤖</span>
-              <span>Data Analytics & AI Foundations (IBM SkillsBuild)</span>
+              <span class="learning-icon">&#129302;</span>
+              <span>Data Analytics &amp; AI Foundations (IBM SkillsBuild)</span>
             </div>
             <div class="learning-item">
-              <span class="learning-icon">💻</span>
-              <span>Version-controlled projects — SQL, Python & AI</span>
+              <span class="learning-icon">&#128187;</span>
+              <span>Version-controlled projects &mdash; SQL, Python &amp; AI</span>
             </div>
           </div>
         </div>
@@ -324,11 +329,11 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
+  <!-- CERTIFICATES -->
   <section class="section certifications" id="certifications">
     <div class="container">
-      <div class="section__label">05 — Certifications</div>
-      <h2 class="section__heading">Credentials & <span class="gradient-text">Development</span></h2>
+      <div class="section__label">05 &mdash; Certificates</div>
+      <h2 class="section__heading">Certificates &amp; <span class="gradient-text">Development</span></h2>
       <div class="certs__section-label">Completed</div>
       <div class="certs__grid certs__grid--completed">
 
@@ -341,7 +346,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
             <p class="cert-card__desc">Comprehensive program covering generative AI principles, tools, workflows, and practical applications across business and technical contexts.</p>
           </div>
           <div class="cert-card__footer">
-            <span class="cert-status cert-status--complete">✓ Certificate of Completion</span>
+            <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
           </div>
         </div>
 
@@ -351,10 +356,10 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
           <div class="cert-card__body">
             <h3>Gen AI Engineering Mastermind</h3>
             <p class="cert-card__issuer">Outskill</p>
-            <p class="cert-card__desc">Advanced AI engineering program covering generative AI system design, implementation, and deployment — certified by industry experts from SLK and Silival.</p>
+            <p class="cert-card__desc">Advanced AI engineering program covering generative AI system design, implementation, and deployment &mdash; developed by industry experts from SLK and Silival.</p>
           </div>
           <div class="cert-card__footer">
-            <span class="cert-status cert-status--complete">✓ Certificate of Completion</span>
+            <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
           </div>
         </div>
 
@@ -367,7 +372,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
             <p class="cert-card__desc">International generative AI bootcamp covering foundational to advanced AI concepts, prompt engineering, and real-world AI tool applications.</p>
           </div>
           <div class="cert-card__footer">
-            <span class="cert-status cert-status--complete">✓ Certificate of Completion</span>
+            <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
           </div>
         </div>
 
@@ -380,7 +385,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
             <p class="cert-card__desc">Hands-on Power BI training covering data import, transformation, interactive dashboard creation, and business intelligence reporting. Completed Apr 2026.</p>
           </div>
           <div class="cert-card__footer">
-            <span class="cert-status cert-status--complete">✓ Statement of Accomplishment</span>
+            <span class="cert-status cert-status--complete">&#10003; Statement of Accomplishment</span>
           </div>
         </div>
 
@@ -405,7 +410,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         <div class="cert-card cert-card--inprogress">
           <div class="cert-card__logo cert-card__logo--microsoft"><span>MS</span></div>
           <div class="cert-card__body">
-            <h3>Data & Cloud Fundamentals</h3>
+            <h3>Data &amp; Cloud Fundamentals</h3>
             <p class="cert-card__issuer">Microsoft Learn</p>
             <p class="cert-card__desc">Core Microsoft cloud and data concepts including Azure fundamentals, data storage, and cloud service models for modern analytics platforms.</p>
           </div>
@@ -418,12 +423,25 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
         <div class="cert-card cert-card--inprogress">
           <div class="cert-card__logo cert-card__logo--ibm"><span>IBM</span></div>
           <div class="cert-card__body">
-            <h3>Data Analytics & AI Foundations</h3>
+            <h3>Data Analytics &amp; AI Foundations</h3>
             <p class="cert-card__issuer">IBM SkillsBuild</p>
             <p class="cert-card__desc">IBM's structured learning path covering data analytics fundamentals alongside artificial intelligence concepts and practical AI tool application.</p>
           </div>
           <div class="cert-card__footer">
             <div class="progress-bar"><div class="progress-bar__fill" style="width: 35%"></div></div>
+            <span class="cert-status cert-status--progress">In Progress</span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--inprogress">
+          <div class="cert-card__logo cert-card__logo--aiap"><span>AI</span></div>
+          <div class="cert-card__body">
+            <h3>AI Generalist Accelerator Program</h3>
+            <p class="cert-card__issuer">Growth School (INTL)</p>
+            <p class="cert-card__desc">100+ hour live program covering full-stack AI generalist skills &mdash; GenAI fundamentals, RAG systems, AI agents, image &amp; video AI, MCP tools, and a 48-hour live buildathon to deploy an AI product.</p>
+          </div>
+          <div class="cert-card__footer">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 50%"></div></div>
             <span class="cert-status cert-status--progress">In Progress</span>
           </div>
         </div>
@@ -435,37 +453,37 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <!-- PORTFOLIO -->
   <section class="section portfolio" id="portfolio">
     <div class="container">
-      <div class="section__label">06 — Portfolio</div>
+      <div class="section__label">06 &mdash; Portfolio</div>
       <h2 class="section__heading">Technical <span class="gradient-text">Portfolio</span></h2>
       <div class="portfolio__banner">
-        <div class="portfolio__icon">🚀</div>
+        <div class="portfolio__icon">&#128640;</div>
         <div class="portfolio__text">
           <h3>Building in Public on GitHub</h3>
           <p>
             Version-controlled learning projects supporting analytics, SQL, and AI exploration.
-            Portfolio dashboards and data projects currently in progress — watch this space.
+            Portfolio dashboards and data projects currently in progress &mdash; watch this space.
           </p>
         </div>
         <a href="https://github.com/DataTechTammy" target="_blank" rel="noopener" class="btn btn--primary">
-          View GitHub →
+          View GitHub &rarr;
         </a>
       </div>
       <div class="portfolio__coming">
         <div class="coming-card">
           <div class="coming-card__tag">Coming Soon</div>
-          <div class="coming-card__icon">📊</div>
+          <div class="coming-card__icon">&#128202;</div>
           <h4>Analytics Dashboard</h4>
           <p>Interactive data visualization project</p>
         </div>
         <div class="coming-card">
           <div class="coming-card__tag">Coming Soon</div>
-          <div class="coming-card__icon">🗄️</div>
+          <div class="coming-card__icon">&#128447;</div>
           <h4>SQL Projects</h4>
-          <p>Database querying & data manipulation</p>
+          <p>Database querying &amp; data manipulation</p>
         </div>
         <div class="coming-card">
           <div class="coming-card__tag">Coming Soon</div>
-          <div class="coming-card__icon">🤖</div>
+          <div class="coming-card__icon">&#129302;</div>
           <h4>AI Experiments</h4>
           <p>Applied generative AI explorations</p>
         </div>
@@ -476,7 +494,7 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="container">
-      <div class="section__label">07 — Contact</div>
+      <div class="section__label">07 &mdash; Contact</div>
       <h2 class="section__heading">Let's <span class="gradient-text">Connect</span></h2>
       <p class="contact__sub">
         Open to data analytics roles, AI-focused opportunities, and collaborative projects.<br/>
@@ -484,21 +502,21 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
       </p>
       <div class="contact__cards">
         <a href="mailto:datacentertech.tmiller@gmail.com" class="contact-card">
-          <div class="contact-card__icon">✉️</div>
+          <div class="contact-card__icon">&#9993;</div>
           <div class="contact-card__text">
             <span class="contact-card__label">Email</span>
             <span class="contact-card__value">datacentertech.tmiller@gmail.com</span>
           </div>
         </a>
         <a href="https://github.com/DataTechTammy" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card__icon">💻</div>
+          <div class="contact-card__icon">&#128187;</div>
           <div class="contact-card__text">
             <span class="contact-card__label">GitHub</span>
             <span class="contact-card__value">DataTechTammy</span>
           </div>
         </a>
         <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card__icon">🔗</div>
+          <div class="contact-card__icon">&#128279;</div>
           <div class="contact-card__text">
             <span class="contact-card__label">LinkedIn</span>
             <span class="contact-card__value">Connect with me</span>
@@ -514,10 +532,10 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
       <div class="footer__content">
         <div class="footer__brand">
           <span class="footer__logo">TSM</span>
-          <p>Tammy S. Miller — Data Analytics & AI</p>
+          <p>Tammy S. Miller &mdash; Data Analytics &amp; AI</p>
         </div>
         <div class="footer__copy">
-          <p>© 2025 Tammy S. Miller · Built with purpose & curiosity</p>
+          <p>&copy; 2026 Tammy S. Miller &middot; Built with purpose &amp; curiosity</p>
         </div>
       </div>
     </div>
@@ -526,11 +544,15 @@ New-Item -ItemType Directory -Path assets\js  -Force | Out-Null
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+'@
 
-'@ | Set-Content -Path index.html -Encoding UTF8
+$html | Set-Content -Path "$repoRoot\index.html" -Encoding UTF8
+Write-Host "  index.html written" -ForegroundColor Green
 
-# --- assets/css/style.css ---
-@'
+# ─────────────────────────────────────────────
+# assets/css/style.css
+# ─────────────────────────────────────────────
+$css = @'
 /* ============================================================
    TAMMY S. MILLER — Personal Resume Page
    Bold & Colorful Design System
@@ -1407,7 +1429,7 @@ body {
 
 .learning-icon { font-size: 1.2rem; }
 
-/* ---------- CERTIFICATIONS ---------- */
+/* ---------- CERTIFICATES ---------- */
 .certs__section-label {
   font-size: 0.75rem;
   font-weight: 700;
@@ -1487,6 +1509,7 @@ body {
 .cert-card__logo--microsoft   { background: linear-gradient(135deg, #0078d4, #00bcf2); }
 .cert-card__logo--ibm         { background: linear-gradient(135deg, #1f70c1, #054ada); }
 .cert-card__logo--growthschool{ background: linear-gradient(135deg, #00c853, #1a472a); }
+.cert-card__logo--aiap        { background: linear-gradient(135deg, #a8ff78, #1e5c1e); }
 
 .cert-card__body h3 {
   font-family: var(--font-main);
@@ -1767,11 +1790,15 @@ body {
   .edu__card { flex-direction: column; }
   .edu__gpa { align-self: flex-start; }
 }
+'@
 
-'@ | Set-Content -Path assets\css\style.css -Encoding UTF8
+$css | Set-Content -Path "$repoRoot\assets\css\style.css" -Encoding UTF8
+Write-Host "  style.css written" -ForegroundColor Green
 
-# --- assets/js/main.js ---
-@'
+# ─────────────────────────────────────────────
+# assets/js/main.js
+# ─────────────────────────────────────────────
+$js = @'
 /* ============================================================
    Tammy S. Miller — Personal Page JS
    ============================================================ */
@@ -1846,7 +1873,7 @@ function typeEffect() {
 
 setTimeout(typeEffect, 800);
 
-/* ---------- INTERSECTION OBSERVER — REVEAL ---------- */
+/* ---------- INTERSECTION OBSERVER - REVEAL ---------- */
 const revealEls = document.querySelectorAll(
   '.skill-card, .timeline__item, .cert-card, .coming-card, ' +
   '.contact-card, .edu__card, .edu__currently, .highlight, ' +
@@ -1945,11 +1972,28 @@ if (window.matchMedia('(pointer: fine)').matches) {
     glow.style.top  = e.clientY + 'px';
   });
 }
+'@
 
-'@ | Set-Content -Path assets\js\main.js -Encoding UTF8
+$js | Set-Content -Path "$repoRoot\assets\js\main.js" -Encoding UTF8
+Write-Host "  main.js written" -ForegroundColor Green
 
-git add .
-git commit -m "Add Gen AI Engineering Mastermind certificate, 7 certs total"
-git push
+# ─────────────────────────────────────────────
+# Git - commit & push
+# ─────────────────────────────────────────────
+Set-Location $repoRoot
 
-Write-Host "Done! Changes pushed." -ForegroundColor Green
+git add index.html assets/css/style.css assets/js/main.js
+git commit -m "Fix certificate wording and add AIAP course
+
+- Replace Certifications with Certificates throughout site
+- Section heading: Certificates & Development
+- Hero stat: 8 Certificates
+- Remove 'certified by industry experts' from Gen AI Engineering card
+- Add AI Generalist Accelerator Program (AIAP) as In Progress course
+- Add aiap logo CSS class (green gradient)"
+
+git push -u origin "claude/create-resume-page-bdYGN"
+
+Write-Host ""
+Write-Host "Done! Changes pushed to branch claude/create-resume-page-bdYGN" -ForegroundColor Green
+Write-Host "View live at: https://datatechtammy.github.io" -ForegroundColor Cyan
