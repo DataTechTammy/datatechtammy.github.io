@@ -874,7 +874,7 @@ body {
 
 .learning-icon { font-size: 1.2rem; }
 
-/* ---------- CERTIFICATIONS ---------- */
+/* ---------- CERTIFICATES ---------- */
 .certs__section-label {
   font-size: 0.75rem;
   font-weight: 700;
@@ -954,6 +954,7 @@ body {
 .cert-card__logo--microsoft   { background: linear-gradient(135deg, #0078d4, #00bcf2); }
 .cert-card__logo--ibm         { background: linear-gradient(135deg, #1f70c1, #054ada); }
 .cert-card__logo--growthschool{ background: linear-gradient(135deg, #00c853, #1a472a); }
+.cert-card__logo--aiap        { background: linear-gradient(135deg, #a8ff78, #1e5c1e); }
 
 .cert-card__body h3 {
   font-family: var(--font-main);
@@ -1234,4 +1235,3 @@ body {
   .edu__card { flex-direction: column; }
   .edu__gpa { align-self: flex-start; }
 }
-
