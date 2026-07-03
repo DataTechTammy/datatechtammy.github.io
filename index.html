@@ -66,7 +66,7 @@
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__num">8</span>
+          <span class="stat__num">9</span>
           <span class="stat__label">Certificates</span>
         </div>
       </div>
@@ -321,7 +321,21 @@
       <div class="certs__section-label">Completed</div>
       <div class="certs__grid certs__grid--completed">
 
-        <div class="cert-card cert-card--completed">
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-ccma.jpg">
+          <div class="cert-card__ribbon">Certified</div>
+          <div class="cert-card__logo cert-card__logo--nha"><span>NHA</span></div>
+          <div class="cert-card__body">
+            <h3>Certified Clinical Medical Assistant (CCMA)</h3>
+            <p class="cert-card__issuer">National Healthcareer Association</p>
+            <p class="cert-card__desc">Nationally accredited professional certification (NCCA) as a Clinical Medical Assistant. Cert #K8Z3B8Y4 &mdash; Active through May 2028.</p>
+          </div>
+          <div class="cert-card__footer">
+            <span class="cert-status cert-status--complete">&#10003; Active Certification</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-mastermind.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
           <div class="cert-card__body">
@@ -331,10 +345,11 @@
           </div>
           <div class="cert-card__footer">
             <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
 
-        <div class="cert-card cert-card--completed">
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-engineering.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
           <div class="cert-card__body">
@@ -344,10 +359,11 @@
           </div>
           <div class="cert-card__footer">
             <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
 
-        <div class="cert-card cert-card--completed">
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-bootcamp.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--growthschool"><span>GS</span></div>
           <div class="cert-card__body">
@@ -357,10 +373,11 @@
           </div>
           <div class="cert-card__footer">
             <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
 
-        <div class="cert-card cert-card--completed">
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-power-bi.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--datacamp"><span>DC</span></div>
           <div class="cert-card__body">
@@ -370,6 +387,7 @@
           </div>
           <div class="cert-card__footer">
             <span class="cert-status cert-status--complete">&#10003; Statement of Accomplishment</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
 
@@ -524,6 +542,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- CERTIFICATE LIGHTBOX -->
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+    <div class="cert-modal__backdrop" onclick="closeCert()"></div>
+    <div class="cert-modal__box">
+      <button class="cert-modal__close" onclick="closeCert()" aria-label="Close">&times;</button>
+      <img class="cert-modal__img" id="certModalImg" src="" alt="Certificate of Completion" />
+    </div>
+  </div>
 
   <script src="assets/js/main.js"></script>
 </body>
