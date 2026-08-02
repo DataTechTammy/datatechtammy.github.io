@@ -76,7 +76,7 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__num">9</span>
+          <span class="stat__num">10</span>
           <span class="stat__label">Certificates</span>
         </div>
       </div>
@@ -350,6 +350,19 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <h3>Gen AI Engineering Mastermind</h3>
             <p class="cert-card__issuer">Outskill</p>
             <p class="cert-card__desc">Advanced AI engineering program covering generative AI system design, implementation, and deployment &mdash; developed by industry experts from SLK and Silival.</p>
+          </div>
+          <div class="cert-card__footer">
+            <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
+          </div>
+        </div>
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-sprint.jpg">
+          <div class="cert-card__ribbon">Completed</div>
+          <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
+          <div class="cert-card__body">
+            <h3>AI Sprint: Open Source AI &amp; Graph Engineering</h3>
+            <p class="cert-card__issuer">Outskill</p>
+            <p class="cert-card__desc">2-day intensive sprint covering open source AI and graph engineering &mdash; including local AI deployment, graph-powered AI architectures, AI workflows, rapid prototyping, and real-world application development. Completed Jul 2026.</p>
           </div>
           <div class="cert-card__footer">
             <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
@@ -1120,6 +1133,7 @@ Write-Host "NEXT STEP — add your certificate images:" -ForegroundColor Yellow
 Write-Host "  assets\images\certs\cert-ccma.jpg            <- NHA CCMA certification" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-genai-mastermind.jpg" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-genai-engineering.jpg" -ForegroundColor White
+Write-Host "  assets\images\certs\cert-genai-sprint.jpg" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-genai-bootcamp.jpg" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-power-bi.jpg" -ForegroundColor White
 Write-Host ""
