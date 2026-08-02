@@ -1,17 +1,14 @@
 /* ============================================================
    Tammy S. Miller — Personal Page JS
    ============================================================ */
-
 /* ---------- NAV SCROLL EFFECT ---------- */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 });
-
 /* ---------- BURGER MENU ---------- */
 const burger = document.getElementById('burger');
 const navLinks = document.querySelector('.nav__links');
-
 burger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   const spans = burger.querySelectorAll('span');
@@ -20,7 +17,6 @@ burger.addEventListener('click', () => {
   spans[1].style.opacity   = isOpen ? '0' : '1';
   spans[2].style.transform = isOpen ? 'translateY(-7px) rotate(-45deg)' : '';
 });
-
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -30,12 +26,10 @@ navLinks.querySelectorAll('a').forEach(link => {
     spans[2].style.transform = '';
   });
 });
-
 /* ---------- ROTATING TITLE ---------- */
 const titles = ['AI Generalist','Data Explorer','AI Developer','Analytics Builder','Tech Innovator'];
 const el = document.getElementById('rotating-title');
 let titleIndex = 0, charIndex = 0, deleting = false;
-
 function typeEffect() {
   const current = titles[titleIndex];
   if (!deleting) {
@@ -50,7 +44,6 @@ function typeEffect() {
   setTimeout(typeEffect, deleting ? 60 : 100);
 }
 setTimeout(typeEffect, 800);
-
 /* ---------- REVEAL ON SCROLL ---------- */
 const revealEls = document.querySelectorAll(
   '.skill-card, .timeline__item, .cert-card, .coming-card, ' +
@@ -58,7 +51,6 @@ const revealEls = document.querySelectorAll(
   '.about__text, .about__card, .portfolio__banner'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -68,14 +60,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => observer.observe(el));
-
 /* ---------- STAGGERED GRID REVEAL ---------- */
 document.querySelectorAll('.skills__grid, .certs__grid, .contact__cards, .portfolio__coming').forEach(grid => {
   grid.querySelectorAll('.reveal').forEach((child, i) => {
     child.style.transitionDelay = `${i * 100}ms`;
   });
 });
-
 /* ---------- ACTIVE NAV ---------- */
 const sections = document.querySelectorAll('section[id]');
 const navLinksAll = document.querySelectorAll('.nav__links a');
@@ -90,7 +80,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.4 });
 sections.forEach(s => sectionObserver.observe(s));
-
 /* ---------- SMOOTH SCROLL ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -101,7 +90,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
 /* ---------- PROGRESS BARS ---------- */
 const progressBars = document.querySelectorAll('.progress-bar__fill');
 const progressObserver = new IntersectionObserver((entries) => {
@@ -113,11 +101,9 @@ const progressObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 progressBars.forEach(bar => { bar.style.animation = 'none'; progressObserver.observe(bar); });
-
 /* ---------- CERTIFICATE LIGHTBOX ---------- */
 const modal    = document.getElementById('certModal');
 const modalImg = document.getElementById('certModalImg');
-
 function openCert(btn) {
   const card = btn.closest('[data-cert]');
   if (!card) return;
@@ -125,15 +111,12 @@ function openCert(btn) {
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeCert() {
   modal.classList.remove('open');
   document.body.style.overflow = '';
   modalImg.src = '';
 }
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCert(); });
-
 /* ---------- CURSOR GLOW (DESKTOP) ---------- */
 if (window.matchMedia('(pointer: fine)').matches) {
   const glow = document.createElement('div');
