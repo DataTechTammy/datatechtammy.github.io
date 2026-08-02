@@ -1,15 +1,11 @@
 # Tammy S. Miller — Resume Site Setup Script
 # Run with: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass; .\setup.ps1
-
 $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-
 Write-Host "Setting up Tammy S. Miller resume site..." -ForegroundColor Cyan
-
 New-Item -ItemType Directory -Path "$repoRoot\assets\css"          -Force | Out-Null
 New-Item -ItemType Directory -Path "$repoRoot\assets\js"           -Force | Out-Null
 New-Item -ItemType Directory -Path "$repoRoot\assets\images\certs" -Force | Out-Null
-
 # ─────────────────────────────────────────────────────────────
 # index.html
 # ─────────────────────────────────────────────────────────────
@@ -27,7 +23,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav__logo">TSM</div>
@@ -43,7 +38,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       <span></span><span></span><span></span>
     </button>
   </nav>
-
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
@@ -82,7 +76,7 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
         </div>
         <div class="stat__divider"></div>
         <div class="stat">
-          <span class="stat__num">9</span>
+          <span class="stat__num">10</span>
           <span class="stat__label">Certificates</span>
         </div>
       </div>
@@ -92,7 +86,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       <div class="scroll-line"></div>
     </div>
   </section>
-
   <!-- ABOUT -->
   <section class="section about" id="about">
     <div class="container">
@@ -158,14 +151,12 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       </div>
     </div>
   </section>
-
   <!-- SKILLS -->
   <section class="section skills" id="skills">
     <div class="container">
       <div class="section__label">02 &mdash; Skills</div>
       <h2 class="section__heading">Core <span class="gradient-text">Capabilities</span></h2>
       <div class="skills__grid">
-
         <div class="skill-card skill-card--data">
           <div class="skill-card__icon">&#128202;</div>
           <h3>Data &amp; Analytics</h3>
@@ -178,7 +169,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="tag">Data Visualization</span>
           </div>
         </div>
-
         <div class="skill-card skill-card--ai">
           <div class="skill-card__icon">&#129302;</div>
           <h3>AI &amp; Emerging Tech</h3>
@@ -191,7 +181,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="tag">AI Literacy</span>
           </div>
         </div>
-
         <div class="skill-card skill-card--platform">
           <div class="skill-card__icon">&#128421;</div>
           <h3>Platforms &amp; IT</h3>
@@ -204,7 +193,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="tag">Enterprise Support</span>
           </div>
         </div>
-
         <div class="skill-card skill-card--soft">
           <div class="skill-card__icon">&#129504;</div>
           <h3>Ways of Working</h3>
@@ -217,18 +205,15 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="tag">Process Improvement</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- EXPERIENCE -->
   <section class="section experience" id="experience">
     <div class="container">
       <div class="section__label">03 &mdash; Experience</div>
       <h2 class="section__heading">Career <span class="gradient-text">Journey</span></h2>
       <div class="timeline">
-
         <div class="timeline__item timeline__item--active">
           <div class="timeline__dot"></div>
           <div class="timeline__date">Jan 2025 &mdash; Present</div>
@@ -257,7 +242,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             </div>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__dot"></div>
           <div class="timeline__date">Nov 2021 &mdash; May 2024</div>
@@ -281,11 +265,9 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- EDUCATION -->
   <section class="section education" id="education">
     <div class="container">
@@ -328,7 +310,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       </div>
     </div>
   </section>
-
   <!-- CERTIFICATES -->
   <section class="section certifications" id="certifications">
     <div class="container">
@@ -336,7 +317,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       <h2 class="section__heading">Certificates &amp; <span class="gradient-text">Development</span></h2>
       <div class="certs__section-label">Completed</div>
       <div class="certs__grid certs__grid--completed">
-
         <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-ccma.jpg">
           <div class="cert-card__ribbon">Certified</div>
           <div class="cert-card__logo cert-card__logo--nha"><span>NHA</span></div>
@@ -350,7 +330,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
-
         <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-mastermind.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
@@ -364,7 +343,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
-
         <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-engineering.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
@@ -378,7 +356,19 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
-
+        <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-sprint.jpg">
+          <div class="cert-card__ribbon">Completed</div>
+          <div class="cert-card__logo cert-card__logo--outskill"><span>OS</span></div>
+          <div class="cert-card__body">
+            <h3>AI Sprint: Open Source AI &amp; Graph Engineering</h3>
+            <p class="cert-card__issuer">Outskill</p>
+            <p class="cert-card__desc">2-day intensive sprint covering open source AI and graph engineering &mdash; including local AI deployment, graph-powered AI architectures, AI workflows, rapid prototyping, and real-world application development. Completed Jul 2026.</p>
+          </div>
+          <div class="cert-card__footer">
+            <span class="cert-status cert-status--complete">&#10003; Certificate of Completion</span>
+            <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
+          </div>
+        </div>
         <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-genai-bootcamp.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--growthschool"><span>GS</span></div>
@@ -392,7 +382,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
-
         <div class="cert-card cert-card--completed" data-cert="assets/images/certs/cert-power-bi.jpg">
           <div class="cert-card__ribbon">Completed</div>
           <div class="cert-card__logo cert-card__logo--datacamp"><span>DC</span></div>
@@ -406,12 +395,9 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <button class="cert-view-btn" onclick="openCert(this)">View Certificate &#8599;</button>
           </div>
         </div>
-
       </div>
-
       <div class="certs__section-label certs__section-label--progress">In Progress</div>
       <div class="certs__grid">
-
         <div class="cert-card cert-card--inprogress">
           <div class="cert-card__logo cert-card__logo--datacamp"><span>DC</span></div>
           <div class="cert-card__body">
@@ -424,7 +410,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="cert-status cert-status--progress">In Progress</span>
           </div>
         </div>
-
         <div class="cert-card cert-card--inprogress">
           <div class="cert-card__logo cert-card__logo--microsoft"><span>MS</span></div>
           <div class="cert-card__body">
@@ -437,7 +422,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="cert-status cert-status--progress">In Progress</span>
           </div>
         </div>
-
         <div class="cert-card cert-card--inprogress">
           <div class="cert-card__logo cert-card__logo--ibm"><span>IBM</span></div>
           <div class="cert-card__body">
@@ -450,7 +434,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="cert-status cert-status--progress">In Progress</span>
           </div>
         </div>
-
         <div class="cert-card cert-card--inprogress">
           <div class="cert-card__logo cert-card__logo--aiap"><span>AI</span></div>
           <div class="cert-card__body">
@@ -463,11 +446,9 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
             <span class="cert-status cert-status--progress">In Progress</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- PORTFOLIO -->
   <section class="section portfolio" id="portfolio">
     <div class="container">
@@ -508,7 +489,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       </div>
     </div>
   </section>
-
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="container">
@@ -543,7 +523,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       </div>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -558,7 +537,6 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       </div>
     </div>
   </footer>
-
   <!-- CERTIFICATE LIGHTBOX -->
   <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate viewer">
     <div class="cert-modal__backdrop" onclick="closeCert()"></div>
@@ -567,13 +545,11 @@ Set-Content -Path "$repoRoot\index.html" -Encoding UTF8 -Value @'
       <img class="cert-modal__img" id="certModalImg" src="" alt="Certificate of Completion" />
     </div>
   </div>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
 '@
 Write-Host "  index.html written" -ForegroundColor Green
-
 # ─────────────────────────────────────────────────────────────
 # assets/css/style.css
 # ─────────────────────────────────────────────────────────────
@@ -582,10 +558,8 @@ Set-Content -Path "$repoRoot\assets\css\style.css" -Encoding UTF8 -Value @'
    TAMMY S. MILLER — Personal Resume Page
    Bold & Colorful Design System
    ============================================================ */
-
 /* ---------- RESET & BASE ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
   --c-pink:    #f72585;
   --c-purple:  #7209b7;
@@ -594,34 +568,27 @@ Set-Content -Path "$repoRoot\assets\css\style.css" -Encoding UTF8 -Value @'
   --c-cyan:    #4cc9f0;
   --c-orange:  #fb5607;
   --c-yellow:  #ffbe0b;
-
   --grad-hero:    linear-gradient(135deg, #f72585 0%, #7209b7 35%, #3a0ca3 65%, #4361ee 100%);
   --grad-main:    linear-gradient(135deg, #f72585, #fb5607, #ffbe0b);
   --grad-cool:    linear-gradient(135deg, #4361ee, #4cc9f0);
   --grad-warm:    linear-gradient(135deg, #f72585, #fb5607);
   --grad-text:    linear-gradient(90deg, #f72585, #fb5607, #ffbe0b);
-
   --bg-dark:   #0a0a0f;
   --bg-card:   #13131a;
   --bg-mid:    #0d0d14;
   --text-main: #f0f0f5;
   --text-muted:#9898aa;
   --border:    rgba(255,255,255,0.08);
-
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
-
   --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
   --shadow-glow: 0 0 40px rgba(247,37,133,0.2);
-
   --font-main: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
-
 html { scroll-behavior: smooth; font-size: 16px; }
-
 body {
   font-family: var(--font-body);
   background: var(--bg-dark);
@@ -629,17 +596,14 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
 }
-
 /* ---------- UTILITIES ---------- */
 .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-
 .gradient-text {
   background: var(--grad-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 /* ---------- NAVIGATION ---------- */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -666,7 +630,6 @@ body {
 }
 .nav__burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav__burger span { display: block; width: 24px; height: 2px; background: var(--text-main); border-radius: 2px; transition: all 0.3s; }
-
 /* ---------- HERO ---------- */
 .hero {
   min-height: 100vh; position: relative;
@@ -712,7 +675,6 @@ body {
 }
 .hero__tagline { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.8; }
 .hero__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
-
 /* ---------- BUTTONS ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -723,7 +685,6 @@ body {
 .btn--primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(247,37,133,0.5); }
 .btn--outline { background: transparent; color: var(--text-main); border: 2px solid var(--border); }
 .btn--outline:hover { border-color: var(--c-pink); color: var(--c-pink); transform: translateY(-3px); }
-
 /* ---------- HERO STATS ---------- */
 .hero__stats { display: flex; align-items: center; justify-content: center; gap: 32px; }
 .stat { display: flex; flex-direction: column; align-items: center; }
@@ -734,7 +695,6 @@ body {
 }
 .stat__label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
 .stat__divider { width: 1px; height: 40px; background: var(--border); }
-
 /* ---------- SCROLL INDICATOR ---------- */
 .hero__scroll {
   position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
@@ -747,13 +707,11 @@ body {
   50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
   100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
 }
-
 /* ---------- SECTIONS ---------- */
 .section { padding: 100px 0; }
 .section:nth-child(even) { background: var(--bg-mid); }
 .section__label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; color: var(--c-pink); margin-bottom: 16px; }
 .section__heading { font-family: var(--font-main); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 48px; letter-spacing: -1px; }
-
 /* ---------- ABOUT ---------- */
 .about__grid { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: start; }
 .about__text p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem; }
@@ -765,7 +723,6 @@ body {
   border-radius: var(--radius-md); font-size: 0.95rem; color: var(--text-muted);
 }
 .highlight__icon { font-size: 1.2rem; flex-shrink: 0; }
-
 /* ---------- PROFILE CARD ---------- */
 .profile-card {
   background: var(--bg-card); border: 1px solid var(--border);
@@ -797,7 +754,6 @@ body {
 .social-btn--github:hover { background: rgba(255,255,255,0.15); }
 .social-btn--linkedin { background: rgba(67,97,238,0.2); color: #8ca3f5; border: 1px solid rgba(67,97,238,0.3); }
 .social-btn--linkedin:hover { background: rgba(67,97,238,0.35); }
-
 /* ---------- SKILLS ---------- */
 .skills__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .skill-card {
@@ -816,7 +772,6 @@ body {
 .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--text-muted); padding: 6px 14px; border-radius: 40px; font-size: 0.8rem; font-weight: 500; transition: all 0.2s; }
 .tag:hover { background: rgba(247,37,133,0.15); border-color: rgba(247,37,133,0.3); color: #f9a0c8; }
-
 /* ---------- EXPERIENCE ---------- */
 .timeline { position: relative; padding-left: 40px; }
 .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--c-pink), var(--c-blue), transparent); }
@@ -836,7 +791,6 @@ body {
 .impact-icon { flex-shrink: 0; }
 .timeline__tech { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .tech-tag { background: rgba(67,97,238,0.12); color: #8ca3f5; border: 1px solid rgba(67,97,238,0.25); padding: 4px 12px; border-radius: 40px; font-size: 0.78rem; font-weight: 500; }
-
 /* ---------- EDUCATION ---------- */
 .edu__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
 .edu__card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; display: flex; gap: 20px; align-items: flex-start; border-top: 3px solid; border-image: var(--grad-main) 1; }
@@ -853,13 +807,11 @@ body {
 .learning-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: rgba(255,255,255,0.04); border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--text-muted); transition: all 0.2s; }
 .learning-item:hover { background: rgba(76,201,240,0.08); color: var(--text-main); }
 .learning-icon { font-size: 1.2rem; }
-
 /* ---------- CERTIFICATES ---------- */
 .certs__section-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--c-cyan); margin-bottom: 20px; padding-left: 4px; }
 .certs__section-label--progress { color: var(--text-muted); margin-top: 40px; }
 .certs__grid--completed { margin-bottom: 8px; }
 .certs__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-
 .cert-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: 28px; display: flex; flex-direction: column; gap: 20px;
@@ -886,7 +838,6 @@ body {
 .cert-status { font-size: 0.8rem; font-weight: 600; }
 .cert-status--complete { color: var(--c-cyan); }
 .cert-status--progress { color: var(--text-muted); }
-
 /* View Certificate button */
 .cert-view-btn {
   align-self: flex-start;
@@ -906,7 +857,6 @@ body {
   border-color: var(--c-cyan);
   transform: translateY(-1px);
 }
-
 /* ---------- CERTIFICATE LIGHTBOX ---------- */
 .cert-modal {
   display: none;
@@ -962,7 +912,6 @@ body {
   z-index: 2;
 }
 .cert-modal__close:hover { background: rgba(247,37,133,0.8); }
-
 /* ---------- PORTFOLIO ---------- */
 .portfolio__banner { background: linear-gradient(135deg, rgba(247,37,133,0.1), rgba(67,97,238,0.1)); border: 1px solid rgba(247,37,133,0.2); border-radius: var(--radius-xl); padding: 40px 48px; display: flex; align-items: center; gap: 32px; margin-bottom: 32px; flex-wrap: wrap; }
 .portfolio__icon { font-size: 3rem; flex-shrink: 0; }
@@ -976,7 +925,6 @@ body {
 .coming-card__icon { font-size: 2.5rem; margin-bottom: 16px; }
 .coming-card h4 { font-family: var(--font-main); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
 .coming-card p { font-size: 0.85rem; color: var(--text-muted); }
-
 /* ---------- CONTACT ---------- */
 .contact__sub { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; margin-bottom: 48px; line-height: 1.8; }
 .contact__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -986,7 +934,6 @@ body {
 .contact-card__text { display: flex; flex-direction: column; gap: 4px; overflow: hidden; }
 .contact-card__label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
 .contact-card__value { font-size: 0.9rem; font-weight: 500; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
 /* ---------- FOOTER ---------- */
 .footer { padding: 40px 0; border-top: 1px solid var(--border); }
 .footer__content { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -994,11 +941,9 @@ body {
 .footer__logo { font-family: var(--font-main); font-size: 1.2rem; font-weight: 900; background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .footer__brand p { color: var(--text-muted); font-size: 0.85rem; }
 .footer__copy p { color: var(--text-muted); font-size: 0.82rem; }
-
 /* ---------- REVEAL ANIMATIONS ---------- */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .about__grid     { grid-template-columns: 1fr; }
@@ -1029,7 +974,6 @@ body {
 }
 '@
 Write-Host "  style.css written" -ForegroundColor Green
-
 # ─────────────────────────────────────────────────────────────
 # assets/js/main.js
 # ─────────────────────────────────────────────────────────────
@@ -1037,17 +981,14 @@ Set-Content -Path "$repoRoot\assets\js\main.js" -Encoding UTF8 -Value @'
 /* ============================================================
    Tammy S. Miller — Personal Page JS
    ============================================================ */
-
 /* ---------- NAV SCROLL EFFECT ---------- */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 });
-
 /* ---------- BURGER MENU ---------- */
 const burger = document.getElementById('burger');
 const navLinks = document.querySelector('.nav__links');
-
 burger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   const spans = burger.querySelectorAll('span');
@@ -1056,7 +997,6 @@ burger.addEventListener('click', () => {
   spans[1].style.opacity   = isOpen ? '0' : '1';
   spans[2].style.transform = isOpen ? 'translateY(-7px) rotate(-45deg)' : '';
 });
-
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -1066,12 +1006,10 @@ navLinks.querySelectorAll('a').forEach(link => {
     spans[2].style.transform = '';
   });
 });
-
 /* ---------- ROTATING TITLE ---------- */
 const titles = ['AI Generalist','Data Explorer','AI Developer','Analytics Builder','Tech Innovator'];
 const el = document.getElementById('rotating-title');
 let titleIndex = 0, charIndex = 0, deleting = false;
-
 function typeEffect() {
   const current = titles[titleIndex];
   if (!deleting) {
@@ -1086,7 +1024,6 @@ function typeEffect() {
   setTimeout(typeEffect, deleting ? 60 : 100);
 }
 setTimeout(typeEffect, 800);
-
 /* ---------- REVEAL ON SCROLL ---------- */
 const revealEls = document.querySelectorAll(
   '.skill-card, .timeline__item, .cert-card, .coming-card, ' +
@@ -1094,7 +1031,6 @@ const revealEls = document.querySelectorAll(
   '.about__text, .about__card, .portfolio__banner'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1104,14 +1040,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => observer.observe(el));
-
 /* ---------- STAGGERED GRID REVEAL ---------- */
 document.querySelectorAll('.skills__grid, .certs__grid, .contact__cards, .portfolio__coming').forEach(grid => {
   grid.querySelectorAll('.reveal').forEach((child, i) => {
     child.style.transitionDelay = `${i * 100}ms`;
   });
 });
-
 /* ---------- ACTIVE NAV ---------- */
 const sections = document.querySelectorAll('section[id]');
 const navLinksAll = document.querySelectorAll('.nav__links a');
@@ -1126,7 +1060,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.4 });
 sections.forEach(s => sectionObserver.observe(s));
-
 /* ---------- SMOOTH SCROLL ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
@@ -1137,7 +1070,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
 /* ---------- PROGRESS BARS ---------- */
 const progressBars = document.querySelectorAll('.progress-bar__fill');
 const progressObserver = new IntersectionObserver((entries) => {
@@ -1149,11 +1081,9 @@ const progressObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 progressBars.forEach(bar => { bar.style.animation = 'none'; progressObserver.observe(bar); });
-
 /* ---------- CERTIFICATE LIGHTBOX ---------- */
 const modal    = document.getElementById('certModal');
 const modalImg = document.getElementById('certModalImg');
-
 function openCert(btn) {
   const card = btn.closest('[data-cert]');
   if (!card) return;
@@ -1161,15 +1091,12 @@ function openCert(btn) {
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeCert() {
   modal.classList.remove('open');
   document.body.style.overflow = '';
   modalImg.src = '';
 }
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCert(); });
-
 /* ---------- CURSOR GLOW (DESKTOP) ---------- */
 if (window.matchMedia('(pointer: fine)').matches) {
   const glow = document.createElement('div');
@@ -1184,15 +1111,12 @@ if (window.matchMedia('(pointer: fine)').matches) {
 }
 '@
 Write-Host "  main.js written" -ForegroundColor Green
-
 # ─────────────────────────────────────────────────────────────
 # Git — commit & push
 # ─────────────────────────────────────────────────────────────
 Set-Location $repoRoot
-
 git add index.html assets/css/style.css assets/js/main.js
 git commit -m "Add certificate lightbox viewer + CCMA cert + all content updates
-
 - Certificate modal: click View Certificate on any completed cert to see the full image
 - Pressing Escape or clicking outside the modal closes it
 - Image files expected in assets/images/certs/
@@ -1200,16 +1124,16 @@ git commit -m "Add certificate lightbox viewer + CCMA cert + all content updates
 - Fix wording: Certifications -> Certificates throughout
 - Hero stat: 9 Certificates
 - Add AI Generalist Accelerator Program as In Progress"
-
-git push -u origin "claude/create-resume-page-bdYGN"
-
+$branch = git rev-parse --abbrev-ref HEAD
+git push -u origin $branch
 Write-Host ""
-Write-Host "Done! Pushed to claude/create-resume-page-bdYGN" -ForegroundColor Green
+Write-Host "Done! Pushed to $branch" -ForegroundColor Green
 Write-Host ""
 Write-Host "NEXT STEP — add your certificate images:" -ForegroundColor Yellow
 Write-Host "  assets\images\certs\cert-ccma.jpg            <- NHA CCMA certification" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-genai-mastermind.jpg" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-genai-engineering.jpg" -ForegroundColor White
+Write-Host "  assets\images\certs\cert-genai-sprint.jpg" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-genai-bootcamp.jpg" -ForegroundColor White
 Write-Host "  assets\images\certs\cert-power-bi.jpg" -ForegroundColor White
 Write-Host ""
